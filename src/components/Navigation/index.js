@@ -16,7 +16,14 @@ export default function Navigation() {
   return (
     <Navbar bg="light" expand="lg">
       <Navbar.Brand as={NavLink} to="/">
-        YOUR PROJECT NAME
+        <img
+          alt=""
+          src="https://media.istockphoto.com/vectors/soup-ladle-with-food-splash-concept-cooking-spoon-design-on-white-vector-id1132124884?k=6&m=1132124884&s=612x612&w=0&h=CycBpHUmfdk7uhVO8a_qd_9Wv_JG51u0-DcKtaVJdLs="
+          width="80"
+          height="80"
+          className="d-inline-block align-top"
+        />{" "}
+        Epicres
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
