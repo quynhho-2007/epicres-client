@@ -8,9 +8,7 @@ export default function RecipeDetails(props) {
   return (
     <Container>
       <Row>
-        <Col>
-          <RecipeCard />
-        </Col>
+        <Col>{/* <RecipeCard /> */} here go recipe card</Col>
         <Col>
           <Card>
             <Card.Title>General information</Card.Title>

@@ -1,25 +1,21 @@
 import axios from "axios";
-import { apiUrl, DEFAULT_PAGINATION_LIMIT } from "../../config/constants";
+import { apiUrl } from "../../config/constants";
 
-export async function fetchNext5Recipes(dispatch, getState) {
-  dispatch(startLoading());
-  const offset = getState().recipes.length;
-  console.log("offset: ", offset);
-
-  const res = await axios.get(
-    `${apiUrl}/recipes?offset=${offset}&limit=${DEFAULT_PAGINATION_LIMIT}`
-  );
-
-  const moreRecipes = res.data;
-
-  dispatch(recipesFetched(moreRecipes));
-}
+export const getRecipes = () => async (dispatch, getState) => {
+  try {
+    dispatch(startLoading());
+    const res = await axios.get(`${apiUrl}/recipes/`);
+    dispatch(recipesFetched(res.data));
+  } catch (e) {
+    console.log(e);
+  }
+};
 
 export const startLoading = () => ({
   type: "recipes/startLoading",
 });
 
-export const recipesFetched = (moreRecipes) => ({
+export const recipesFetched = (data) => ({
   type: "recipes/recipesFetched",
-  payload: moreRecipes,
+  payload: data,
 });

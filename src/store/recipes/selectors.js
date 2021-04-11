@@ -1,1 +1,1 @@
-export const selectSpaces = (state) => state.recipes;
+export const selectAllRecipes = () => (reduxState) => reduxState.recipes.all;
