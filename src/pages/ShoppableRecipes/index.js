@@ -11,12 +11,14 @@ import {
   DropdownButton,
   Dropdown,
 } from "react-bootstrap";
-import { getRecipes } from "../../store/recipes/actions";
+import { getPopularRecipes, getRecipes } from "../../store/recipes/actions";
 import {
   selectAllRecipes,
   selectFilteredAndSortedRecipes,
+  selectPopularRecipes,
 } from "../../store/recipes/selectors";
 import RecipeCard from "../../components/RecipeCard";
+import RecipeCarousel from "../../components/RecipeCarousel";
 import { selectAllTags } from "../../store/tags/selectors";
 import { getTags } from "../../store/tags/actions";
 
@@ -33,10 +35,15 @@ export default function ShoppableRecipes() {
     selectFilteredAndSortedRecipes(sortSelected, filterSelected)
   );
   const tags = useSelector(selectAllTags());
+  console.log("tags arr", tags);
+
+  const popularRecipes = useSelector(selectPopularRecipes());
+  console.log("popular recipes", popularRecipes);
 
   useEffect(() => {
     dispatch(getRecipes());
     dispatch(getTags());
+    dispatch(getPopularRecipes());
   }, [dispatch]);
   // if (!recipes.length) return <p>Loading...</p>;
   return (
@@ -45,6 +52,20 @@ export default function ShoppableRecipes() {
         <h1>Shoppable Recipes</h1>
       </Jumbotron>
       <Container>
+        <Row>
+          {popularRecipes?.map((r) => {
+            return (
+              <RecipeCarousel
+                key={r.id}
+                title={r.title}
+                url={r.url}
+                totalPrice={r.totalPrice}
+                totalCalories={r.totalCalories}
+                bought={r.bought}
+              />
+            );
+          })}
+        </Row>
         <Row>
           <Col>
             <label>Sort by:</label>
@@ -63,6 +84,14 @@ export default function ShoppableRecipes() {
             <select
               value={filterSelected}
               onChange={(e) => setFilterSelected(e.target.value)}
+              // onChange={(e) =>
+              //   setFilterSelected({
+              //     multiValue: [...e.target.tags].map((tag) => tag.value),
+              //   })
+              // }
+              // handleChange(evt) {
+              //   this.setState({multiValue: [...evt.target.selectedOptions].map(o => o.value)});
+              // }
             >
               {tags.map((tag) => {
                 return (

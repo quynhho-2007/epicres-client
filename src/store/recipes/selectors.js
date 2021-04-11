@@ -1,4 +1,6 @@
 export const selectAllRecipes = () => (reduxState) => reduxState.recipes.all;
+export const selectPopularRecipes = () => (reduxState) =>
+  reduxState.recipes.popular;
 
 // export const selectSpecificRecipe = (id) => (reduxState) => {
 //   const clonedRecipes = [...reduxState.recipes.all];
