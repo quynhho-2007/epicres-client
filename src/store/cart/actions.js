@@ -1,4 +1,5 @@
 export const addOneToCart = (recipe) => {
+  console.log("recipe added in action", recipe);
   return {
     type: "cart/addOneToCart",
     payload: recipe,

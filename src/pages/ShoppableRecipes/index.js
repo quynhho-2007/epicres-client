@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import {
   Container,
@@ -24,6 +25,12 @@ import RecipeDetailsPage from "../../pages/RecipeDetailsPage";
 import { selectAllTags } from "../../store/tags/selectors";
 import { getTags } from "../../store/tags/actions";
 import CartButtonInRecipeCard from "../../components/CartButtonInRecipeCard";
+import {
+  selectCartItems,
+  selectSpecificRecipeQuantity,
+} from "../../store/cart/selectors";
+import { selectSpecificRecipe } from "../../store/recipes/selectors";
+import { removeOneFromCart, addOneToCart } from "../../store/cart/actions";
 
 export default function ShoppableRecipes() {
   const [sortSelected, setSortSelected] = useState("price");
@@ -49,6 +56,25 @@ export default function ShoppableRecipes() {
     dispatch(getPopularRecipes());
   }, [dispatch]);
   // if (!recipes.length) return <p>Loading...</p>;
+
+  //For CartButtonInRecipeCard
+
+  // useEffect(() => {
+  //   dispatch(getRecipes());
+  // }, [dispatch]);
+
+  const route_param = useParams();
+  const id = parseInt(route_param.id);
+
+  const specificRecipe = useSelector(selectSpecificRecipe(id));
+
+  const specificRecipeQuantity = useSelector(selectSpecificRecipeQuantity(id));
+  const cart = useSelector(selectCartItems());
+  const isInCart = cart.find((item) => {
+    return item.recipe.id === id;
+  });
+  //console.log("is in cart:", isInCart)
+
   return (
     <>
       <Container style={{ backgroundColor: "#d8e3e7" }}>
@@ -130,19 +156,6 @@ export default function ShoppableRecipes() {
               })}
             </select>
           </Col>
-
-          {/* <DropdownButton
-            alignRight
-            title="Sort By"
-            id="dropdown-menu-align-right"
-            onSelect={handleSelect}
-          >
-            <Dropdown.Item eventKey="option-1">Title</Dropdown.Item>
-            <Dropdown.Item eventKey="option-2">Time-to-cook</Dropdown.Item>
-            <Dropdown.Item eventKey="option-3">Popularity</Dropdown.Item>
-            <Dropdown.Divider />
-            <Dropdown.Item eventKey="some link">Price</Dropdown.Item>
-          </DropdownButton> */}
         </Row>
         <Row>
           {sortedAndFilteredRecipes.map((r) => {
@@ -159,13 +172,51 @@ export default function ShoppableRecipes() {
                   totalCalories={r.totalCalories}
                   bought={r.bought}
                 />
-                <Button
+                {/* <Button
                   onClick={() => {
                     console.log("click");
                   }}
                 >
                   add
-                </Button>
+                </Button> */}
+                <div>
+                  {isInCart ? (
+                    <>
+                      <button
+                        size="sm"
+                        variant="primary"
+                        onClick={() => {
+                          console.log("click");
+                          dispatch(removeOneFromCart(specificRecipe));
+                        }}
+                      >
+                        -
+                      </button>
+                      <label>{specificRecipeQuantity} In Cart</label>
+                      <button
+                        size="sm"
+                        variant="primary"
+                        onClick={() => dispatch(addOneToCart(specificRecipe))}
+                      >
+                        +
+                      </button>
+                    </>
+                  ) : (
+                    <>
+                      <label>Add To Cart</label>
+                      <button
+                        size="sm"
+                        variant="primary"
+                        onClick={() => {
+                          console.log("click");
+                          dispatch(addOneToCart(specificRecipe));
+                        }}
+                      >
+                        +
+                      </button>
+                    </>
+                  )}
+                </div>
               </Col>
             );
           })}

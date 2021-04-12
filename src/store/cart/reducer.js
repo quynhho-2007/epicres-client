@@ -6,8 +6,8 @@ export default function reducer(state = initialState, action) {
   switch (action.type) {
     case "cart/addOneToCart": {
       const recipe = action.payload;
-      console.log("recipe", recipe);
-      const result = state.items.find((item) => item.recipe.id === recipe.id);
+      console.log("recipe ADDED", recipe);
+      const result = state.items?.find((item) => item.recipe.id === recipe.id);
       //if the recipe is not addeded in cart yet
       if (!result) {
         return {
@@ -29,7 +29,7 @@ export default function reducer(state = initialState, action) {
 
       return {
         ...state,
-        item: addedItem,
+        items: addedItem,
       };
     }
     case "cart/removeOneFromCart": {
@@ -55,7 +55,7 @@ export default function reducer(state = initialState, action) {
       });
       return {
         ...state,
-        item: removedItem,
+        items: removedItem,
       };
     }
     case "cart/emptyCart": {

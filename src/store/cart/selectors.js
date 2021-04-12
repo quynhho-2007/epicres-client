@@ -1,6 +1,6 @@
 export const selectSpecificRecipeQuantity = (id) => (reduxState) => {
   const clonedCart = reduxState.cart.items;
-  const specificRecipeQuantity = clonedCart.map((item) => {
+  const specificRecipeQuantity = clonedCart?.map((item) => {
     if (item.quantity) {
       if (item.recipe.id === id) {
         return item.quantity;
@@ -13,7 +13,12 @@ export const selectSpecificRecipeQuantity = (id) => (reduxState) => {
   });
   return specificRecipeQuantity;
 };
-//need total Cart Price
 
 //need all cart items
 export const selectCartItems = () => (reduxState) => reduxState.cart.items;
+
+//need total Cart Price
+export const selectTotalCartPrice = () => (reduxState) => {
+  const totalPrice = [...reduxState.cart.items];
+  return totalPrice.reduce((a, c) => a + c.recipe.totalPrice * c.quantity, 0);
+};

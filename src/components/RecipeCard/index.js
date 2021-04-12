@@ -24,23 +24,9 @@ export default function RecipeCard(props) {
             </Card.Text>
           </Link>
         </Card.ImgOverlay>
-        <CartButtonInRecipeCard id={props.id} />
-        {/* <Button variant="warning">Here go cart button</Button> */}
+        {/* <CartButtonInRecipeCard id={props.id} /> */}
       </Card.Body>
     </Card>
     // </Link>
-
-    // <Card className="bg-dark text-white" style={{ width: "18rem" }}>
-    //   <Card.Img src={props.url} alt={props.title} />
-    //   <Card.ImgOverlay>
-    //     <Card.Title>{props.title}</Card.Title>
-    //     <Card.Text>
-    //       <p>Total Price: {props.totalPrice}</p>
-    //       <p>Calories: {props.totalCalories}</p>
-    //       <p>Purchase times: {props.bought} </p>
-    //     </Card.Text>
-    //     <Button>Here go cart button</Button>
-    //   </Card.ImgOverlay>
-    // </Card>
   );
 }
