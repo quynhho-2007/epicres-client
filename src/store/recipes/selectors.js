@@ -5,6 +5,15 @@ export const selectPopularRecipes = () => (reduxState) =>
 export const selectSpecificRecipe = () => (reduxState) =>
   reduxState.recipes.specific;
 
+// export const selectOneProduct = (id) => (reduxState) => {
+//     const clonedRecipes = [...reduxState.recipes.all];
+
+//     const specificProduct = clonedProducts.find((product) => {
+//       return id === product.id;
+//     });
+//     return specificProduct;
+//   };
+
 export const selectFilteredAndSortedRecipes = (sortBy, filterBy) => (
   reduxState
 ) => {
@@ -22,10 +31,16 @@ export const selectFilteredAndSortedRecipes = (sortBy, filterBy) => (
     }
   });
   const filteredRecipes =
-    filterBy.length > 0
-      ? sortedRecipes.filter((r) => filterBy.includes(r.tags.title))
+    filterBy.length > 3 //3 is the length of Option "All"
+      ? sortedRecipes.filter((r) => {
+          console.log("R", r);
+          return r.tags.find((t) => t.title === filterBy);
+        })
       : [...sortedRecipes];
-
+  // const result = roles.filter(role => role.groups.find(group => user.groups.includes(group.id)));
+  console.log("filterRecipessss", filteredRecipes);
+  console.log("filterby", filterBy);
+  console.log("lenght");
   return filteredRecipes;
   // if (!filterBy.length) {
   //   return [...sortedRecipes];

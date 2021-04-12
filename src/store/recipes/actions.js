@@ -29,13 +29,15 @@ export const getPopularRecipes = () => async (dispatch, getState) => {
   }
 };
 
-export const getSpecificRecipes = (id) => async (dispatch, getState) => {
+export const getSpecificRecipe = (id) => async (dispatch, getState) => {
   try {
+    console.log("ID", id);
     dispatch(startLoading());
     const res = await axios.get(`${apiUrl}/recipes/${id}`);
 
     dispatch(specificRecipeFetched(res.data));
     console.log("specific recipeeee:", res.data);
+    console.log("id in action", id);
   } catch (e) {
     console.log(e);
   }

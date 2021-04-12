@@ -31,10 +31,11 @@ export default (state = initialState, action) => {
       };
     }
     case "recipes/specificRecipeFetched": {
+      console.log("action.payload in specific", action.payload);
       return {
         ...state,
         loading: false,
-        specific: [...state.specific, ...action.payload],
+        specific: action.payload,
       };
     }
 

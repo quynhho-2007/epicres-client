@@ -5,78 +5,59 @@ import { useDispatch, useSelector } from "react-redux";
 import { Container, Button, Row, Col, Card, ListGroup } from "react-bootstrap";
 import RecipeDetails from "../../components/RecipeDetails";
 import Cart from "../Cart";
-import { getRecipes } from "../../store/recipes/actions";
+import { getSpecificRecipe } from "../../store/recipes/actions";
 import { selectSpecificRecipe } from "../../store/recipes/selectors";
 
 export default function RecipeDetailsPage() {
   const route_param = useParams();
-  const recipeId = parseInt(route_param.recipeId);
+  const id = parseInt(route_param.id);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getRecipes());
-  }, [dispatch]);
+    dispatch(getSpecificRecipe(id));
+  }, [dispatch, id]);
 
-  const specificRecipe = useSelector(selectSpecificRecipe(recipeId));
+  const specificRecipe = useSelector(selectSpecificRecipe(id));
   console.log("specific recipe", specificRecipe);
+  console.log("id", id);
+  console.log("ingredients", specificRecipe.ingredients);
 
   return (
-    <p>details</p>
-    // <>
-    //   {!specificRecipe ? (
-    //     <p>Loading...</p>
-    //   ) : (
-    //     <p>{specificRecipe.title}</p>
-    //     // <Container>
-    //     //   <Row>
-    //     //     <Col>{/* <RecipeCard /> */} here go recipe card</Col>
-    //     //     <Col>
-    //     //       <Card>
-    //     //         <Card.Title>General information</Card.Title>
-    //     //         <Card.Text>
-    //     //           <p>Description: {specificRecipe.description}</p>
-    //     //           <p>Time-to-cook: {specificRecipe.timeToCook}</p>
+    <Container>
+      {" "}
+      <Row>
+        <Col>
+          <Card style={{ textAlign: "left", color: "white" }}>
+            <Card.Img src={specificRecipe.url} />
+            <Card.ImgOverlay>
+              <Card.Title>{specificRecipe.title}</Card.Title>
+              <Card.Text>
+                <p>Total Price: {specificRecipe.totalPrice}</p>
+                <p>Calories: {specificRecipe.totalCalories}</p>
+                <p>Purchase times: {specificRecipe.bought} </p>
+              </Card.Text>
+            </Card.ImgOverlay>
+          </Card>
+        </Col>
+        {/* {specificRecipe.ingredients?.map((i) => {
+          console.log(i);
+          return <p>{i.title}</p>;
+        })} */}
+        <Col>
+          <Card>
+            {specificRecipe.ingredients?.map((i) => {
+              return <Card> {i.title}</Card>;
+            })}
 
-    //     //           {specificRecipe.tags ? (
-    //     //             <p>Tags: no tags</p>
-    //     //           ) : (
-    //     //             specificRecipe.tags.map((tag) => {
-    //     //               return <p>Tags: {tag.title}</p>;
-    //     //             })
-    //     //           )}
-    //     //         </Card.Text>
-    //     //       </Card>
-    //     //     </Col>
-    //     //   </Row>
-    //     //   <Row>
-    //     //     <Col>
-    //     //       <Card>
-    //     //         <Card.Title>Ingredients</Card.Title>
-    //     //         <Card.Text>
-    //     //           {specificRecipe.ingredients.map((i) => {
-    //     //             return (
-    //     //               <ListGroup variant="flush">
-    //     //                 <ListGroup.Item>{i.title}</ListGroup.Item>
-    //     //               </ListGroup>
-    //     //             );
-    //     //           })}
-    //     //         </Card.Text>
-    //     //       </Card>
-    //     //     </Col>
-
-    //     //     <Col>
-    //     //       <Card>
-    //     //         <Card.Title>Instruction</Card.Title>
-    //     //         <Card.Text>{specificRecipe.instruction}</Card.Text>
-    //     //       </Card>
-    //     //     </Col>
-    //     //   </Row>
-    //     // </Container>
-    //   )}
-
-    //   <Link to="/cart" component={Cart}>
-    //     <Button>Go To Cart</Button>
-    //   </Link>
-    // </>
+            {/* <Card.Title>{i.title}</Card.Title>
+            <Card.Text>
+              <p>Total Price: {specificRecipe.totalPrice}</p>
+              <p>Calories: {specificRecipe.totalCalories}</p>
+              <p>Purchase times: {specificRecipe.bought} </p>
+            </Card.Text> */}
+          </Card>
+        </Col>
+      </Row>
+    </Container>
   );
 }

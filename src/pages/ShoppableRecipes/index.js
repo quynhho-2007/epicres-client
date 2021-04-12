@@ -118,6 +118,7 @@ export default function ShoppableRecipes() {
               //   this.setState({multiValue: [...evt.target.selectedOptions].map(o => o.value)});
               // }
             >
+              <option>All</option>
               {tags.map((tag) => {
                 return (
                   <option key={tag.title} value={tag.title}>
@@ -143,6 +144,7 @@ export default function ShoppableRecipes() {
         </Row>
         <Row>
           {sortedAndFilteredRecipes.map((r) => {
+            console.log("r.id", r.id);
             return (
               <Col sm>
                 <Link to={`/recipes/${r.id}`}>
