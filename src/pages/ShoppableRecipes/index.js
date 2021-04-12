@@ -10,6 +10,7 @@ import {
   Row,
   DropdownButton,
   Dropdown,
+  Carousel,
 } from "react-bootstrap";
 import { getPopularRecipes, getRecipes } from "../../store/recipes/actions";
 import {
@@ -52,20 +53,31 @@ export default function ShoppableRecipes() {
         <h1>Shoppable Recipes</h1>
       </Jumbotron>
       <Container>
-        <Row>
+        <Carousel fade>
           {popularRecipes?.map((r) => {
             return (
-              <RecipeCarousel
-                key={r.id}
-                title={r.title}
-                url={r.url}
-                totalPrice={r.totalPrice}
-                totalCalories={r.totalCalories}
-                bought={r.bought}
-              />
+              <Carousel.Item key={r.id}>
+                <img className="d-block w-100" src={r.url} alt={r.title} />
+
+                <Carousel.Caption
+                  style={{
+                    color: "white",
+                  }}
+                  className="p-5"
+                >
+                  <h3>{r.title}</h3>
+                  <p>Total Price: {r.totalPrice}</p>
+                  <p>Calories: {r.totalCalories}</p>
+                  <p>Purchase times: {r.bought} </p>
+                  {/* <Button variant='danger' onClick={() => onDelete(story.id)}>
+                Delete story
+              </Button> */}
+                </Carousel.Caption>
+              </Carousel.Item>
             );
           })}
-        </Row>
+        </Carousel>
+
         <Row>
           <Col>
             <label>Sort by:</label>
