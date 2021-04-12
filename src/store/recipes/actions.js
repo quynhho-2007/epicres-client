@@ -13,8 +13,15 @@ export const getRecipes = () => async (dispatch, getState) => {
 
 export const getPopularRecipes = () => async (dispatch, getState) => {
   try {
+    const offset = getState().recipes.popular.length;
+    console.log("getState: ", getState().recipes.popular.length);
+
+    console.log("offset: ", offset);
+
     dispatch(startLoading());
-    const res = await axios.get(`${apiUrl}/recipes/popular/`);
+    const res = await axios.get(
+      `${apiUrl}/recipes/popular?offset=${offset}&limit=3`
+    );
     dispatch(popularRecipesFetched(res.data));
     console.log("res.data", res.data);
   } catch (e) {

@@ -7,7 +7,7 @@ import RecipeDetailsPage from "../../pages/RecipeDetailsPage";
 export default function RecipeCard(props) {
   return (
     // <Link to="/details" component={RecipeDetailsPage}>
-    <Card style={{ width: "28rem", color: "#80A1D4" }}>
+    <Card style={{ width: "28rem", color: "#f58634" }}>
       <Card.Img src={props.url} />
       <Card.Body>
         <Card.ImgOverlay>
@@ -18,7 +18,7 @@ export default function RecipeCard(props) {
             <p>Purchase times: {props.bought} </p>
           </Card.Text>
         </Card.ImgOverlay>
-        <Button>Here go cart button</Button>
+        <Button variant="warning">Here go cart button</Button>
       </Card.Body>
     </Card>
     // </Link>

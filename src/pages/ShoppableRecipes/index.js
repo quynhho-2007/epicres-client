@@ -19,7 +19,7 @@ import {
   selectPopularRecipes,
 } from "../../store/recipes/selectors";
 import RecipeCard from "../../components/RecipeCard";
-import RecipeCarousel from "../../components/RecipeCarousel";
+
 import { selectAllTags } from "../../store/tags/selectors";
 import { getTags } from "../../store/tags/actions";
 
@@ -49,10 +49,20 @@ export default function ShoppableRecipes() {
   // if (!recipes.length) return <p>Loading...</p>;
   return (
     <>
-      <Jumbotron>
-        <h1>Shoppable Recipes</h1>
-      </Jumbotron>
       <Container>
+        <Jumbotron
+          style={{
+            backgroundColor: "#e2703a",
+            color: "black",
+            textAlign: "center",
+          }}
+        >
+          <h2>Shoppable Recipes</h2>
+          <h5>
+            Explore The Top Three Most Popular Recipes and Many Other Epic
+            Recipes From EpicRes
+          </h5>
+        </Jumbotron>
         <Row>
           <Carousel fade>
             {popularRecipes?.map((r) => {
