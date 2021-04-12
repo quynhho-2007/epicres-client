@@ -2,6 +2,7 @@ const initialState = {
   loading: false,
   all: [],
   popular: [],
+  specific: [],
 };
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -29,6 +30,13 @@ export default (state = initialState, action) => {
         popular: [...state.popular, ...action.payload],
       };
     }
+    // case "recipes/specificRecipeFetched": {
+    //   return {
+    //     ...state,
+    //     loading: false,
+    //     specific: [...state.specific, ...action.payload],
+    //   };
+    // }
 
     default: {
       return state;

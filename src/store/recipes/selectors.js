@@ -2,14 +2,8 @@ export const selectAllRecipes = () => (reduxState) => reduxState.recipes.all;
 export const selectPopularRecipes = () => (reduxState) =>
   reduxState.recipes.popular;
 
-// export const selectSpecificRecipe = (id) => (reduxState) => {
-//   const clonedRecipes = [...reduxState.recipes.all];
-
-//   const specificRecipe = clonedRecipes.find((r) => {
-//     return id === r.id;
-//   });
-//   return specificRecipe;
-// };
+export const selectSpecificRecipe = () => (reduxState) =>
+  reduxState.recipes.specific;
 
 export const selectFilteredAndSortedRecipes = (sortBy, filterBy) => (
   reduxState

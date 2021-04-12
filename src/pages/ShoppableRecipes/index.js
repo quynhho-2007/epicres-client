@@ -19,6 +19,7 @@ import {
   selectPopularRecipes,
 } from "../../store/recipes/selectors";
 import RecipeCard from "../../components/RecipeCard";
+import RecipeDetailsPage from "../../pages/RecipeDetailsPage";
 
 import { selectAllTags } from "../../store/tags/selectors";
 import { getTags } from "../../store/tags/actions";
@@ -144,14 +145,17 @@ export default function ShoppableRecipes() {
           {sortedAndFilteredRecipes.map((r) => {
             return (
               <Col sm>
-                <RecipeCard
-                  key={r.id}
-                  title={r.title}
-                  url={r.url}
-                  totalPrice={r.totalPrice}
-                  totalCalories={r.totalCalories}
-                  bought={r.bought}
-                />
+                <Link to={`/recipes/${r.id}`}>
+                  {" "}
+                  <RecipeCard
+                    key={r.id}
+                    title={r.title}
+                    url={r.url}
+                    totalPrice={r.totalPrice}
+                    totalCalories={r.totalCalories}
+                    bought={r.bought}
+                  />
+                </Link>
               </Col>
             );
           })}

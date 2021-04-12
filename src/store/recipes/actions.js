@@ -29,6 +29,18 @@ export const getPopularRecipes = () => async (dispatch, getState) => {
   }
 };
 
+// export const getSpecificRecipes = (id) => async (dispatch, getState) => {
+//   try {
+//     dispatch(startLoading());
+//     const res = await axios.get(`${apiUrl}/recipes/${id}`);
+
+//     dispatch(specificRecipeFetched(res.data));
+//     console.log("specific recipeeee:", res.data);
+//   } catch (e) {
+//     console.log(e);
+//   }
+// };
+
 export const startLoading = () => ({
   type: "recipes/startLoading",
 });
@@ -42,3 +54,8 @@ export const popularRecipesFetched = (data) => ({
   type: "recipes/popularRecipesFetched",
   payload: data,
 });
+
+// export const specificRecipeFetched = (specificRecipe) => ({
+//   type: "recipes/specificRecipeFetched",
+//   payload: specificRecipe,
+// });
