@@ -2,7 +2,7 @@ export const selectAllRecipes = () => (reduxState) => reduxState.recipes.all;
 export const selectPopularRecipes = () => (reduxState) =>
   reduxState.recipes.popular;
 
-export const selectSpecificRecipe = () => (reduxState) =>
+export const selectSpecificRecipe = (id) => (reduxState) =>
   reduxState.recipes.specific;
 
 // export const selectOneProduct = (id) => (reduxState) => {

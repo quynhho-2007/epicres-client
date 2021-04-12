@@ -1,6 +1,10 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import { Container, Jumbotron } from "react-bootstrap";
 
 export default function Cart() {
-  return <Container>Cart here </Container>;
+  return (
+    <Container>
+      <Jumbotron>Your Shopping Cart</Jumbotron>{" "}
+    </Container>
+  );
 }

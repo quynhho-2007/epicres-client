@@ -11,3 +11,16 @@ export const removeOneFromCart = (recipe) => {
     payload: recipe,
   };
 };
+
+export const emptyCart = () => {
+  return {
+    type: "cart/emptyCart",
+  };
+};
+
+export const removeFromCart = (recipe) => {
+  return {
+    type: "cart/removeFromCart",
+    payload: recipe,
+  };
+};

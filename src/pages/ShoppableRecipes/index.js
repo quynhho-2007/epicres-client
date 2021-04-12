@@ -23,6 +23,7 @@ import RecipeDetailsPage from "../../pages/RecipeDetailsPage";
 
 import { selectAllTags } from "../../store/tags/selectors";
 import { getTags } from "../../store/tags/actions";
+import CartButtonInRecipeCard from "../../components/CartButtonInRecipeCard";
 
 export default function ShoppableRecipes() {
   const [sortSelected, setSortSelected] = useState("price");
@@ -50,11 +51,11 @@ export default function ShoppableRecipes() {
   // if (!recipes.length) return <p>Loading...</p>;
   return (
     <>
-      <Container>
+      <Container style={{ backgroundColor: "#d8e3e7" }}>
         <Jumbotron
           style={{
-            backgroundColor: "#e2703a",
-            color: "black",
+            backgroundColor: "#d8e3e7",
+            color: "white",
             textAlign: "center",
           }}
         >
@@ -90,6 +91,7 @@ export default function ShoppableRecipes() {
             })}
           </Carousel>
         </Row>
+        <br />
 
         <Row>
           <Col>
@@ -147,17 +149,23 @@ export default function ShoppableRecipes() {
             console.log("r.id", r.id);
             return (
               <Col sm>
-                <Link to={`/recipes/${r.id}`}>
-                  {" "}
-                  <RecipeCard
-                    key={r.id}
-                    title={r.title}
-                    url={r.url}
-                    totalPrice={r.totalPrice}
-                    totalCalories={r.totalCalories}
-                    bought={r.bought}
-                  />
-                </Link>
+                {" "}
+                <RecipeCard
+                  key={r.id}
+                  id={r.id}
+                  title={r.title}
+                  url={r.url}
+                  totalPrice={r.totalPrice}
+                  totalCalories={r.totalCalories}
+                  bought={r.bought}
+                />
+                <Button
+                  onClick={() => {
+                    console.log("click");
+                  }}
+                >
+                  add
+                </Button>
               </Col>
             );
           })}

@@ -6,6 +6,7 @@ export default function reducer(state = initialState, action) {
   switch (action.type) {
     case "cart/addOneToCart": {
       const recipe = action.payload;
+      console.log("recipe", recipe);
       const result = state.items.find((item) => item.recipe.id === recipe.id);
       //if the recipe is not addeded in cart yet
       if (!result) {
@@ -57,7 +58,17 @@ export default function reducer(state = initialState, action) {
         item: removedItem,
       };
     }
-    //case Emty cart
+    case "cart/emptyCart": {
+      return initialState;
+    }
+    case "cart/removeFromCart": {
+      return {
+        ...state,
+        items: state.items.filter(
+          (item) => item.recipe.id !== action.payload.id
+        ),
+      };
+    }
 
     default: {
       return state;

@@ -16,4 +16,4 @@ export const selectSpecificRecipeQuantity = (id) => (reduxState) => {
 //need total Cart Price
 
 //need all cart items
-export const selectCartItems = (reduxState) => reduxState.items;
+export const selectCartItems = () => (reduxState) => reduxState.cart.items;

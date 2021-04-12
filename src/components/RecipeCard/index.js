@@ -3,22 +3,29 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Col, Card, Button } from "react-bootstrap";
 import RecipeDetailsPage from "../../pages/RecipeDetailsPage";
+import CartButtonInRecipeCard from "../CartButtonInRecipeCard";
 
 export default function RecipeCard(props) {
   return (
     // <Link to="/details" component={RecipeDetailsPage}>
-    <Card style={{ width: "28rem", color: "#f58634" }}>
+    <Card
+      style={{ width: "28rem", color: "white", backgroundColor: "#d8e3e7" }}
+    >
       <Card.Img src={props.url} />
+
       <Card.Body>
         <Card.ImgOverlay>
-          <Card.Title>{props.title}</Card.Title>
-          <Card.Text>
-            <p>Total Price: {props.totalPrice}</p>
-            <p>Calories: {props.totalCalories}</p>
-            <p>Purchase times: {props.bought} </p>
-          </Card.Text>
+          <Link to={`/recipes/${props.id}`}>
+            <Card.Title>{props.title}</Card.Title>
+            <Card.Text>
+              <p>Total Price: {props.totalPrice}</p>
+              <p>Calories: {props.totalCalories}</p>
+              <p>Purchase times: {props.bought} </p>
+            </Card.Text>
+          </Link>
         </Card.ImgOverlay>
-        <Button variant="warning">Here go cart button</Button>
+        <CartButtonInRecipeCard id={props.id} />
+        {/* <Button variant="warning">Here go cart button</Button> */}
       </Card.Body>
     </Card>
     // </Link>
