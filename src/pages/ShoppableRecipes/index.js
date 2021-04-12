@@ -53,30 +53,32 @@ export default function ShoppableRecipes() {
         <h1>Shoppable Recipes</h1>
       </Jumbotron>
       <Container>
-        <Carousel fade>
-          {popularRecipes?.map((r) => {
-            return (
-              <Carousel.Item key={r.id}>
-                <img className="d-block w-100" src={r.url} alt={r.title} />
+        <Row>
+          <Carousel fade>
+            {popularRecipes?.map((r) => {
+              return (
+                <Carousel.Item key={r.id}>
+                  <img className="d-block w-100" src={r.url} alt={r.title} />
 
-                <Carousel.Caption
-                  style={{
-                    color: "white",
-                  }}
-                  className="p-5"
-                >
-                  <h3>{r.title}</h3>
-                  <p>Total Price: {r.totalPrice}</p>
-                  <p>Calories: {r.totalCalories}</p>
-                  <p>Purchase times: {r.bought} </p>
-                  {/* <Button variant='danger' onClick={() => onDelete(story.id)}>
+                  <Carousel.Caption
+                    style={{
+                      color: "white",
+                    }}
+                    className="p-5"
+                  >
+                    <h3>{r.title}</h3>
+                    <p>Total Price: {r.totalPrice}</p>
+                    <p>Calories: {r.totalCalories}</p>
+                    <p>Purchase times: {r.bought} </p>
+                    {/* <Button variant='danger' onClick={() => onDelete(story.id)}>
                 Delete story
               </Button> */}
-                </Carousel.Caption>
-              </Carousel.Item>
-            );
-          })}
-        </Carousel>
+                  </Carousel.Caption>
+                </Carousel.Item>
+              );
+            })}
+          </Carousel>
+        </Row>
 
         <Row>
           <Col>
