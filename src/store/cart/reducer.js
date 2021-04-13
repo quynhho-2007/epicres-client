@@ -6,7 +6,8 @@ export default function reducer(state = initialState, action) {
   switch (action.type) {
     case "cart/addOneToCart": {
       const recipe = action.payload;
-      console.log("recipe ADDED", recipe);
+      console.log("recipe ADDED", action);
+
       const result = state.items?.find((item) => item.recipe.id === recipe.id);
       //if the recipe is not addeded in cart yet
       if (!result) {

@@ -5,14 +5,15 @@ export const selectPopularRecipes = () => (reduxState) =>
 export const selectSpecificRecipe = (id) => (reduxState) =>
   reduxState.recipes.specific;
 
-// export const selectOneRecipe = (id) => (reduxState) => {
-//   const clonedRecipes = [...reduxState.recipes?.all];
+export const selectOneRecipe = (id) => (reduxState) => {
+  const clonedRecipes = [...reduxState.recipes?.all];
 
-//   const specificRecipe = clonedRecipes?.find((recipe) => {
-//     return id === recipe.id;
-//   });
-//   return specificRecipe; //need total Cart Price
-// };
+  const specificRecipe = clonedRecipes?.find((recipe) => {
+    return id === recipe.id;
+  });
+
+  return specificRecipe; //need total Cart Price
+};
 
 export const selectFilteredAndSortedRecipes = (sortBy, filterBy) => (
   reduxState

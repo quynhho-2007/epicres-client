@@ -29,7 +29,10 @@ import {
   selectCartItems,
   selectSpecificRecipeQuantity,
 } from "../../store/cart/selectors";
-import { selectSpecificRecipe } from "../../store/recipes/selectors";
+import {
+  selectSpecificRecipe,
+  selectOneRecipe,
+} from "../../store/recipes/selectors";
 import { removeOneFromCart, addOneToCart } from "../../store/cart/actions";
 
 export default function ShoppableRecipes() {
@@ -66,7 +69,8 @@ export default function ShoppableRecipes() {
   const route_param = useParams();
   const id = parseInt(route_param.id);
 
-  const specificRecipe = useSelector(selectSpecificRecipe(id));
+  const specificRecipe = useSelector(selectOneRecipe(id));
+  console.log("specific re", specificRecipe);
 
   const specificRecipeQuantity = useSelector(selectSpecificRecipeQuantity(id));
   const cart = useSelector(selectCartItems());
@@ -179,7 +183,7 @@ export default function ShoppableRecipes() {
                 >
                   add
                 </Button> */}
-                <div>
+                {/* <div>
                   {isInCart ? (
                     <>
                       <button
@@ -216,7 +220,7 @@ export default function ShoppableRecipes() {
                       </button>
                     </>
                   )}
-                </div>
+                </div> */}
               </Col>
             );
           })}
