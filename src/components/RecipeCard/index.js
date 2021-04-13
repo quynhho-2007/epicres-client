@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
 import { Link } from "react-router-dom";
-import { Col, Card, Button, Container } from "react-bootstrap";
-import RecipeDetailsPage from "../../pages/RecipeDetailsPage";
+import { Card, Container } from "react-bootstrap";
+
 import CartButtonInRecipeCard from "../CartButtonInRecipeCard";
 
 export default function RecipeCard(props) {
@@ -12,9 +11,12 @@ export default function RecipeCard(props) {
         style={{ width: "28rem", color: "white", backgroundColor: "#d8e3e7" }}
       >
         <Card.Body>
-          <Card.Img src={props.url} />
+          <Card.Img
+            style={{ width: "100%", maxHeight: "260px" }}
+            src={props.url}
+          />
           <Card.ImgOverlay>
-            <Link to={`/recipes/${props.id}`}>
+            <Link style={{ color: "white" }} to={`/recipes/${props.id}`}>
               <Card.Title>{props.title}</Card.Title>
               <Card.Text>
                 <p>Total Price: {props.totalPrice}</p>

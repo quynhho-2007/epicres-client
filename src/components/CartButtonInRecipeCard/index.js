@@ -5,10 +5,7 @@ import {
   selectCartItems,
   selectSpecificRecipeQuantity,
 } from "../../store/cart/selectors";
-import {
-  selectSpecificRecipe,
-  selectOneRecipe,
-} from "../../store/recipes/selectors";
+import { selectOneRecipe } from "../../store/recipes/selectors";
 import { getRecipes } from "../../store/recipes/actions";
 import { addOneToCart, removeOneFromCart } from "../../store/cart/actions";
 

@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
 
-import { Col, Card, Button, Container, Row, ListGroup } from "react-bootstrap";
-import RecipeCard from "../RecipeCard";
+import { Col, Card, Container, Row, ListGroup } from "react-bootstrap";
 
 export default function RecipeDetails(props) {
   return (

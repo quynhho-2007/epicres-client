@@ -5,13 +5,7 @@ import {
   selectCartItems,
   selectTotalCartPrice,
 } from "../../store/cart/selectors";
-import {
-  ListGroup,
-  Button,
-  Table,
-  Jumbotron,
-  Container,
-} from "react-bootstrap";
+import { Button, Table, Jumbotron, Container } from "react-bootstrap";
 import CartButtonInRecipeCard from "../../components/CartButtonInRecipeCard";
 
 import { emptyCart } from "../../store/cart/actions";
@@ -51,7 +45,10 @@ export default function Cart() {
                   <td>{index + 1}</td>
 
                   <td>
-                    <Link to={`/recipes/${item.recipe.id}`}>
+                    <Link
+                      style={{ color: "black" }}
+                      to={`/recipes/${item.recipe.id}`}
+                    >
                       {item.recipe.title}
                     </Link>
                     <p> {`${item.quantity} x €${item.recipe.totalPrice}`}</p>

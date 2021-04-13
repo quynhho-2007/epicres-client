@@ -1,18 +1,9 @@
 import React, { useEffect } from "react";
-import { Link } from "react-dom";
+
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  Container,
-  Button,
-  Row,
-  Col,
-  Card,
-  ListGroup,
-  Jumbotron,
-} from "react-bootstrap";
-import RecipeDetails from "../../components/RecipeDetails";
-import Cart from "../Cart";
+import { Container, Row, Col, Card, Jumbotron } from "react-bootstrap";
+
 import { getSpecificRecipe } from "../../store/recipes/actions";
 import { selectSpecificRecipe } from "../../store/recipes/selectors";
 
