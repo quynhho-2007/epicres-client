@@ -1,5 +1,5 @@
-import { button, label } from "bootstrap";
 import React, { useEffect } from "react";
+import { Button, ButtonGroup } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectCartItems,
@@ -33,40 +33,40 @@ export default function CartButtonInRecipeCard(props) {
   return (
     <div>
       {isInCart ? (
-        <>
-          <button
+        <ButtonGroup>
+          <Button
+            variant="info"
             size="sm"
-            variant="primary"
             onClick={() => {
               console.log("click");
               dispatch(removeOneFromCart(specificRecipe));
             }}
           >
             -
-          </button>
-          <label>{specificRecipeQuantity} In Cart</label>
-          <button
+          </Button>{" "}
+          <label>{specificRecipeQuantity} In Cart</label>{" "}
+          <Button
+            variant="info"
             size="sm"
-            variant="primary"
             onClick={() => dispatch(addOneToCart(specificRecipe))}
           >
             +
-          </button>
-        </>
+          </Button>
+        </ButtonGroup>
       ) : (
-        <>
-          <label>Add To Cart</label>
-          <button
+        <ButtonGroup>
+          <label>Add To Cart</label>{" "}
+          <Button
+            variant="info"
             size="sm"
-            variant="primary"
             onClick={() => {
               console.log("click");
               dispatch(addOneToCart(specificRecipe));
             }}
           >
             +
-          </button>
-        </>
+          </Button>
+        </ButtonGroup>
       )}
     </div>
   );

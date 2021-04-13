@@ -15,6 +15,7 @@ import {
 import CartButtonInRecipeCard from "../../components/CartButtonInRecipeCard";
 
 import { emptyCart } from "../../store/cart/actions";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
   const dispatch = useDispatch();
@@ -50,7 +51,9 @@ export default function Cart() {
                   <td>{index + 1}</td>
 
                   <td>
-                    {item.recipe.title}
+                    <Link to={`/recipes/${item.recipe.id}`}>
+                      {item.recipe.title}
+                    </Link>
                     <p> {`${item.quantity} x €${item.recipe.totalPrice}`}</p>
                   </td>
                   <td>
@@ -83,8 +86,13 @@ export default function Cart() {
               </tr>
             </tbody>
           </Table>
-          <Button onClick={() => dispatch(emptyCart())}>Empty Cart</Button>
-          <Button>Continue Shopping</Button>
+          <Button variant="info" onClick={() => dispatch(emptyCart())}>
+            Empty Cart
+          </Button>{" "}
+          <Link to="/">
+            {" "}
+            <Button variant="info">Continue Shopping</Button>
+          </Link>
         </div>
       ) : (
         <Jumbotron
