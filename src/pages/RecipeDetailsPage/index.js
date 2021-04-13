@@ -2,7 +2,15 @@ import React, { useEffect } from "react";
 import { Link } from "react-dom";
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { Container, Button, Row, Col, Card, ListGroup } from "react-bootstrap";
+import {
+  Container,
+  Button,
+  Row,
+  Col,
+  Card,
+  ListGroup,
+  Jumbotron,
+} from "react-bootstrap";
 import RecipeDetails from "../../components/RecipeDetails";
 import Cart from "../Cart";
 import { getSpecificRecipe } from "../../store/recipes/actions";
@@ -23,8 +31,17 @@ export default function RecipeDetailsPage() {
   console.log("ingredients", specificRecipe.ingredients);
 
   return (
-    <Container>
-      {" "}
+    <Container style={{ backgroundColor: "#d8e3e7" }}>
+      <Jumbotron
+        style={{
+          backgroundColor: "#d8e3e7",
+          color: "#0D4D4D",
+          textAlign: "center",
+        }}
+      >
+        <h2>Recipe Details</h2>
+        <h3>Check Out This Popular Recipe And Enjoy Shopping! </h3>
+      </Jumbotron>{" "}
       <Row>
         <Col>
           <Card style={{ textAlign: "left", color: "white" }}>

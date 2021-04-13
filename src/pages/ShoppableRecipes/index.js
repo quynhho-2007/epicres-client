@@ -85,15 +85,15 @@ export default function ShoppableRecipes() {
         <Jumbotron
           style={{
             backgroundColor: "#d8e3e7",
-            color: "white",
+            color: "#0D4D4D",
             textAlign: "center",
           }}
         >
           <h2>Shoppable Recipes</h2>
-          <h5>
+          <h4>
             Explore The Top Three Most Popular Recipes and Many Other Epic
             Recipes From EpicRes
-          </h5>
+          </h4>
         </Jumbotron>
         <Row>
           <Carousel fade>
