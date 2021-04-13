@@ -7,6 +7,7 @@ import { selectToken } from "../../store/user/selectors";
 import NavbarItem from "./NavbarItem";
 import LoggedIn from "./LoggedIn";
 import LoggedOut from "./LoggedOut";
+import Logo from "../../../src/data/Epicres-logo.png";
 
 export default function Navigation() {
   const token = useSelector(selectToken);
@@ -18,12 +19,11 @@ export default function Navigation() {
       <Navbar.Brand as={NavLink} to="/">
         <img
           alt=""
-          src="https://media.istockphoto.com/vectors/soup-ladle-with-food-splash-concept-cooking-spoon-design-on-white-vector-id1132124884?k=6&m=1132124884&s=612x612&w=0&h=CycBpHUmfdk7uhVO8a_qd_9Wv_JG51u0-DcKtaVJdLs="
-          width="80"
-          height="80"
+          src={Logo}
+          width="200"
+          height="180"
           className="d-inline-block align-top"
         />{" "}
-        Epicres
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

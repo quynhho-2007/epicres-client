@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import { Button, ButtonGroup } from "react-bootstrap";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import Button from "react-bootstrap/Button";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectCartItems,
@@ -41,7 +42,9 @@ export default function CartButtonInRecipeCard(props) {
           >
             -
           </Button>{" "}
-          <label>{specificRecipeQuantity} In Cart</label>{" "}
+          <Button variant="info" disabled>
+            {specificRecipeQuantity} In Cart
+          </Button>
           <Button
             variant="info"
             size="sm"
@@ -52,7 +55,9 @@ export default function CartButtonInRecipeCard(props) {
         </ButtonGroup>
       ) : (
         <ButtonGroup>
-          <label>Add To Cart</label>{" "}
+          <Button variant="info" disabled>
+            Add To Cart
+          </Button>
           <Button
             variant="info"
             size="sm"
