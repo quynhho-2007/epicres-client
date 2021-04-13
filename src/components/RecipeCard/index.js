@@ -18,12 +18,12 @@ export default function RecipeCard(props) {
           <Card.ImgOverlay>
             <Link style={{ color: "white" }} to={`/recipes/${props.id}`}>
               <Card.Title>{props.title}</Card.Title>
-              <Card.Text>
-                <p>Total Price: {props.totalPrice}</p>
-                <p>Calories: {props.totalCalories}</p>
-                <p>Purchase times: {props.bought} </p>
-              </Card.Text>
             </Link>
+            <Card.Text>
+              <p>Total Price: {props.totalPrice}</p>
+              <p>Calories: {props.totalCalories}</p>
+              <p>Purchase times: {props.bought} </p>
+            </Card.Text>
           </Card.ImgOverlay>
         </Card.Body>
       </Card>
