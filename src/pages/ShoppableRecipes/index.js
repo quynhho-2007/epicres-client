@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 import { Container, Jumbotron, Col, Row, Carousel } from "react-bootstrap";
 import { getPopularRecipes, getRecipes } from "../../store/recipes/actions";
