@@ -12,6 +12,48 @@ export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const TOKEN_STILL_VALID = "TOKEN_STILL_VALID";
 export const LOG_OUT = "LOG_OUT";
 
+//To get all favorite recipes of a user
+export const getFavorites = () => async (dispatch, getState) => {
+  try {
+    // console.log(tokenNeeded)
+    const tokenNeeded = selectToken(getState());
+    const favorites = await axios.get(`${apiUrl}/favorites`, {
+      headers: {
+        Authorization: `Bearer ${tokenNeeded}`,
+      },
+    });
+    // console.log("favorites test", favorites)
+
+    dispatch(setFavorites(favorites.data.products));
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+//To remove favorites
+export const removeFavorite = (id) => async (dispatch, getState) => {
+  try {
+    const tokenNeeded = selectToken(getState());
+    const deleteFavorite = await axios.delete(
+      `${apiUrl}/favorites/recipes/${id}`,
+      {
+        headers: {
+          Authorization: `Bearer ${tokenNeeded}`,
+        },
+      }
+    );
+    // console.log("remove favorite test", deleteFavorite)
+    dispatch(notFavorite(deleteFavorite.data));
+  } catch (error) {
+    console.log(error.message);
+  }
+};
+
+export const notFavorite = (favoriteData) => ({
+  type: "user/setNotFavoriteRecipe",
+  payload: favoriteData,
+});
+
 //To add favorites
 export const NewFavorites = (id) => async (dispatch, getState) => {
   try {
