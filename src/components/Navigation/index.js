@@ -34,7 +34,7 @@ export default function Navigation() {
           <NavbarItem path="/cart" linkText="Cart" />
           <NavbarItem path="/signup" linkText="SignUp" />
           {token ? (
-            <NavbarItem path="/myprofile" linkText="My Customer Insights" />
+            <NavbarItem path="/myprofile" linkText="My Profile" />
           ) : null}
           {loginLogoutControls}
         </Nav>

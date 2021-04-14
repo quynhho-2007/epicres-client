@@ -12,20 +12,36 @@ export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const TOKEN_STILL_VALID = "TOKEN_STILL_VALID";
 export const LOG_OUT = "LOG_OUT";
 
-const loginSuccess = (userWithToken) => {
-  return {
-    type: LOGIN_SUCCESS,
-    payload: userWithToken,
-  };
+//To add favorites
+export const NewFavorites = (id) => async (dispatch, getState) => {
+  try {
+    const tokenNeeded = selectToken(getState());
+    const sendFavorite = await axios.post(
+      `${apiUrl}/favorites/recipes/${id}`,
+      {},
+      {
+        headers: {
+          Authorization: `Bearer ${tokenNeeded}`,
+        },
+      }
+    );
+    // console.log("new favorite test", sendFavorite)
+
+    dispatch(setFavorites(sendFavorite.data));
+  } catch (e) {
+    console.log(e.message);
+  }
 };
 
-const tokenStillValid = (userWithoutToken) => ({
-  type: TOKEN_STILL_VALID,
-  payload: userWithoutToken,
+export const setFavorites = (favoriteData) => ({
+  type: "user/setFavoriteRecipe",
+  payload: favoriteData,
 });
 
+//To Logout
 export const logOut = () => ({ type: LOG_OUT });
 
+//To Signup
 export const signUp = (firstName, lastName, email, password) => {
   return async (dispatch, getState) => {
     dispatch(appLoading());
@@ -53,6 +69,7 @@ export const signUp = (firstName, lastName, email, password) => {
   };
 };
 
+//To Login
 export const login = (email, password) => {
   return async (dispatch, getState) => {
     dispatch(appLoading());
@@ -78,6 +95,7 @@ export const login = (email, password) => {
   };
 };
 
+//To validate user === Check if it's a valid user
 export const getUserWithStoredToken = () => {
   return async (dispatch, getState) => {
     // get token from the state
@@ -91,10 +109,14 @@ export const getUserWithStoredToken = () => {
       // if we do have a token,
       // check wether it is still valid or if it is expired
       const response = await axios.get(`${apiUrl}/me`, {
+        //The GET/me endpoint can be used to:
+        // - get the users email & name using only their token
+        // - checking if a token is (still) valid
+        // don't send back the password hash
         headers: { Authorization: `Bearer ${token}` },
       });
 
-      // token is still valid
+      // token is still valid: Check If Valid User ?
       dispatch(tokenStillValid(response.data));
       dispatch(appDoneLoading());
     } catch (error) {
@@ -110,3 +132,15 @@ export const getUserWithStoredToken = () => {
     }
   };
 };
+
+const loginSuccess = (userWithToken) => {
+  return {
+    type: LOGIN_SUCCESS,
+    payload: userWithToken,
+  };
+};
+
+const tokenStillValid = (userWithoutToken) => ({
+  type: TOKEN_STILL_VALID,
+  payload: userWithoutToken,
+});
