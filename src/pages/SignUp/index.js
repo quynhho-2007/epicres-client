@@ -9,7 +9,8 @@ import { useHistory, Link } from "react-router-dom";
 import { Col, Jumbotron } from "react-bootstrap";
 
 export default function SignUp() {
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
@@ -25,11 +26,12 @@ export default function SignUp() {
   function submitForm(event) {
     event.preventDefault();
 
-    dispatch(signUp(name, email, password));
+    dispatch(signUp(firstName, lastName, email, password));
 
     setEmail("");
     setPassword("");
-    setName("");
+    setFirstName("");
+    setLastName("");
   }
 
   return (
@@ -44,13 +46,23 @@ export default function SignUp() {
         <h1>Signup Form</h1>
       </Jumbotron>
       <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5">
-        <Form.Group controlId="formBasicName">
-          <Form.Label>Name</Form.Label>
+        <Form.Group controlId="formBasicFirstName">
+          <Form.Label>First Name</Form.Label>
           <Form.Control
-            value={name}
-            onChange={(event) => setName(event.target.value)}
+            value={firstName}
+            onChange={(event) => setFirstName(event.target.value)}
             type="text"
-            placeholder="Enter name"
+            placeholder="Enter your first name"
+            required
+          />
+        </Form.Group>
+        <Form.Group controlId="formBasicLastName">
+          <Form.Label>Last Name</Form.Label>
+          <Form.Control
+            value={lastName}
+            onChange={(event) => setLastName(event.target.value)}
+            type="text"
+            placeholder="Enter your last name"
             required
           />
         </Form.Group>
