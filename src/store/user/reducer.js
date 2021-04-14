@@ -2,8 +2,10 @@ import { LOG_OUT, LOGIN_SUCCESS, TOKEN_STILL_VALID } from "./actions";
 
 const initialState = {
   token: localStorage.getItem("token"),
-  name: null,
-  email: null
+  firstName: null,
+  lastName: null,
+  email: null,
+  favorites: [],
 };
 
 export default (state = initialState, action) => {
@@ -18,6 +20,21 @@ export default (state = initialState, action) => {
 
     case TOKEN_STILL_VALID:
       return { ...state, ...action.payload };
+
+    case "user/setFavoriteRecipe": {
+      return {
+        ...state,
+        favorites: [...state.favorites, ...action.payload],
+      };
+    }
+    case "user/setNotFavoriteRecipe": {
+      return {
+        ...state,
+        favorites: state.favorites.filter(
+          (fav) => fav.id !== action.payload.id
+        ),
+      };
+    }
 
     default:
       return state;
