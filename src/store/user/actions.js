@@ -55,7 +55,7 @@ export const notFavorite = (favoriteData) => ({
 });
 
 //To add favorites
-export const NewFavorites = (id) => async (dispatch, getState) => {
+export const newFavorite = (id) => async (dispatch, getState) => {
   try {
     const tokenNeeded = selectToken(getState());
     const sendFavorite = await axios.post(
