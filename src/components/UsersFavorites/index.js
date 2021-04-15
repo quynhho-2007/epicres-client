@@ -45,14 +45,7 @@ export default function UsersFavorites() {
       <Container fluid>
         <div>
           <Row>
-            <h1
-              style={{
-                fontFamily: "Allura",
-                fontWeight: "bold",
-              }}
-            >
-              User Favorites:
-            </h1>
+            <h4>User Favorites:</h4>
           </Row>
           <Row>
             <p
