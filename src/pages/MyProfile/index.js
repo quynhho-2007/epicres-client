@@ -62,7 +62,7 @@ export default function MyProfile() {
               </Form.Group>
             </Form>
           </Col>
-          <Col>
+          {/* <Col>
             <h1
               style={{
                 fontFamily: "Allura",
@@ -71,8 +71,8 @@ export default function MyProfile() {
             >
               Order Details:
             </h1>
-            {/* <UserOrders data={user}/> */}
-          </Col>
+            <UserOrders data={user}/>
+          </Col> */}
         </Row>
       </Container>
       <UsersFavorites data={user} />
