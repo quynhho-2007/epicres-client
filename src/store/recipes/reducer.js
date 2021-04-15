@@ -7,16 +7,16 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case "recipes/startLoading": {
-      console.log("action loading", action);
+      // console.log("action loading", action);
       return {
         ...state,
         loading: true,
       };
     }
     case "recipes/recipesFetched": {
-      console.log("action", action);
+      // console.log("action", action);
 
-      console.log("action.payload: ", action.payload);
+      // console.log("action.payload: ", action.payload);
       return {
         ...state,
         loading: false,
@@ -31,7 +31,7 @@ export default (state = initialState, action) => {
       };
     }
     case "recipes/specificRecipeFetched": {
-      console.log("action.payload in specific", action.payload);
+      // console.log("action.payload in specific", action.payload);
       return {
         ...state,
         loading: false,

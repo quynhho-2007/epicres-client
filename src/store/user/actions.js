@@ -24,7 +24,8 @@ export const getFavorites = () => async (dispatch, getState) => {
     });
     // console.log("favorites test", favorites)
 
-    dispatch(setFavorites(favorites.data.products));
+    dispatch(setFavorites(favorites.data));
+    console.log("favorites.data", favorites.data);
   } catch (error) {
     console.log(error.message);
   }
@@ -58,6 +59,7 @@ export const notFavorite = (favoriteData) => ({
 export const newFavorite = (id) => async (dispatch, getState) => {
   try {
     const tokenNeeded = selectToken(getState());
+    // console.log("token", tokenNeeded);
     const sendFavorite = await axios.post(
       `${apiUrl}/favorites/recipes/${id}`,
       {},
@@ -67,11 +69,13 @@ export const newFavorite = (id) => async (dispatch, getState) => {
         },
       }
     );
-    // console.log("new favorite test", sendFavorite)
+    // console.log("id in action fav", id);
+    // console.log("new favorite test", sendFavorite);
 
     dispatch(setFavorites(sendFavorite.data));
+    console.log("sendFavorite", sendFavorite);
   } catch (e) {
-    console.log(e.message);
+    console.log(e);
   }
 };
 

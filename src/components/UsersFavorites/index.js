@@ -31,7 +31,7 @@ export default function UsersFavorites() {
         );
       })
     ) : (
-      <p>Loading...</p>
+      <p>Loading....</p>
     );
 
   useEffect(() => {

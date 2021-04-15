@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Card, Container } from "react-bootstrap";
 
 import CartButtonInRecipeCard from "../CartButtonInRecipeCard";
+import HeartButton from "../HeartButton";
 
 export default function RecipeCard(props) {
   return (
@@ -28,6 +29,7 @@ export default function RecipeCard(props) {
         </Card.Body>
       </Card>
       <CartButtonInRecipeCard id={props.id} />
+      <HeartButton id={props.id} />
       <br />
     </Container>
   );

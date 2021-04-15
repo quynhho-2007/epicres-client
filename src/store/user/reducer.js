@@ -22,9 +22,11 @@ export default (state = initialState, action) => {
       return { ...state, ...action.payload };
 
     case "user/setFavoriteRecipe": {
+      console.log("action.payload fav", action.payload);
+
       return {
         ...state,
-        favorites: [...state.favorites, ...action.payload],
+        favorites: [...state.favorites, action.payload],
       };
     }
     case "user/setNotFavoriteRecipe": {
