@@ -1,11 +1,12 @@
 ## Introduction To EpicRes:
 
-:thinking: _Have you ever experienced that reoccuring food waste after cooking because you groceries shopped more than you need?_
+:thinking: _Have you ever experienced reoccuring food waste after cooking, because you groceries shopped more than you need?_
 
 :thinking: _Have you ever felt that the long process from planning meals, listing groceries and ingredients prepations is what stops you from cooking more?_
 
-EPICRES is an app for shoppable recipes that combines groceries shop, meal plan and recipe design into one simple Click 'buy'
-Features are signed, keeping in mind:
+EPICRES is an app for shoppable recipes that combines groceries shop, meal plan and recipe design into one simple Click 'buy'.
+
+Features are designed, keeping in mind:
 
 - Suggest recipes based on preferences and diet.
 - Order just enough ingredients, no food waste (feature: What's in your fridge?).
