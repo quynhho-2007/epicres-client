@@ -10,11 +10,11 @@ export default function UsersFavorites() {
   const dispatch = useDispatch();
   const history = useHistory();
   const favorites = useSelector(selectFavorites());
-  // console.log("favorites out of state", favorites)
+  console.log("favorites HERE", favorites);
 
   const displayFavorites =
-    favorites.length >= 1 ? (
-      favorites.map((favorite) => {
+    favorites?.length >= 1 ? (
+      favorites?.map((favorite) => {
         return (
           <Col key={favorite.id}>
             <Image

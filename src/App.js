@@ -14,6 +14,7 @@ import Cart from "./pages/Cart";
 import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
 import RecipeDetailsPage from "./pages/RecipeDetailsPage";
+import MyProfile from "./pages/MyProfile";
 
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ function App() {
         <Route path="/recipes/:id" component={RecipeDetailsPage} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
+        <Route path="/myprofile" component={MyProfile} />
       </Switch>
     </div>
   );

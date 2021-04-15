@@ -76,9 +76,6 @@ export default function MyProfile() {
         </Row>
       </Container>
       <UsersFavorites data={user} />
-      {/* <footer>
-                <ContactDetails />
-            </footer> */}
     </div>
   );
 }

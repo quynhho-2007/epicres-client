@@ -8,6 +8,7 @@ import NavbarItem from "./NavbarItem";
 import LoggedIn from "./LoggedIn";
 import LoggedOut from "./LoggedOut";
 import Logo from "../../../src/data/Epicres-logo.png";
+import MyProfile from "../../pages/MyProfile";
 
 export default function Navigation() {
   const token = useSelector(selectToken);
@@ -34,7 +35,7 @@ export default function Navigation() {
           <NavbarItem path="/cart" linkText="Cart" />
           <NavbarItem path="/signup" linkText="SignUp" />
           {token ? (
-            <NavbarItem path="/myprofile" linkText="My Profile" />
+            <NavbarItem path="/myprofile" linkText=" My Profile" />
           ) : null}
           {loginLogoutControls}
         </Nav>

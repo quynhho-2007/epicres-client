@@ -73,7 +73,7 @@ export const newFavorite = (id) => async (dispatch, getState) => {
     // console.log("new favorite test", sendFavorite);
 
     dispatch(setFavorites(sendFavorite.data));
-    console.log("sendFavorite", sendFavorite);
+    // console.log("sendFavorite", sendFavorite);
   } catch (e) {
     console.log(e);
   }

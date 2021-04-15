@@ -28,8 +28,8 @@ export default function HeartButton(props) {
     <Button
       variant="outline-danger"
       onClick={() => {
-        console.log("Add fav");
-        console.log("id fav", props.id);
+        // console.log("Add fav");
+        // console.log("id fav", props.id);
         dispatch(newFavorite(props.id));
       }}
     >
