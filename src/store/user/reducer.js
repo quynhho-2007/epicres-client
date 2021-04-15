@@ -26,7 +26,7 @@ export default (state = initialState, action) => {
 
       return {
         ...state,
-        favorites: [...state.favorites, action.payload],
+        favorites: [...state.favorites, ...action.payload],
       };
     }
     case "user/setNotFavoriteRecipe": {

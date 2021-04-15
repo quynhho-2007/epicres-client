@@ -17,15 +17,17 @@ export const getFavorites = () => async (dispatch, getState) => {
   try {
     // console.log(tokenNeeded)
     const tokenNeeded = selectToken(getState());
+
     const favorites = await axios.get(`${apiUrl}/favorites`, {
       headers: {
         Authorization: `Bearer ${tokenNeeded}`,
       },
     });
-    // console.log("favorites test", favorites)
+    console.log("favorites test", favorites);
 
-    dispatch(setFavorites(favorites.data));
-    console.log("favorites.data", favorites.data);
+    dispatch(setFavorites(favorites.data.recipes));
+
+    console.log("favorites.data", favorites.data.recipes);
   } catch (error) {
     console.log(error.message);
   }
