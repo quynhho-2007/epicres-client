@@ -13,7 +13,7 @@ Features are designed, keeping in mind: :tipping_hand_woman:
 
 I am currently working on a mobile app version with React Native :calling:.
 
-Here you can watch [Demo](<iframe src="https://giphy.com/embed/urNMNIFQmUrQ7ElSOn" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/urNMNIFQmUrQ7ElSOn">via GIPHY</a></p>) :eyes:
+Here you can watch [Demo](https://github.com/quynhho-2007/epicres-client/blob/master/assets/Homepage.gif?raw=true) :eyes:
 
 Here you can check the [live version](coming soon) :technologist:
 
