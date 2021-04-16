@@ -1,4 +1,4 @@
-## Introduction To EpicRes:
+## Introduction To EpicRes: :tada:
 
 :thinking: _Have you ever experienced reoccuring food waste after cooking, because you groceries shopped more than you need?_
 
