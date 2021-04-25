@@ -15,18 +15,17 @@ I am currently working on a mobile app version with React Native :calling:.
 
 ## Demo :eyes: :technologist:
 
-HomePage
 ![HomePage Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/HomePage.gif?raw=true)
-HomePage Features
+
 ![HomePage Features Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/HomePageFeatures.gif?raw=true)
-DetailsPage
+
 ![DetailsPage Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/DetailsPage.gif?raw=true)
-Cart
+
 ![Cart Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/Cart.gif?raw=true)
-Add Favorites Loggined
+
 ![DetailsPage Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/AddFavoritesLoginned.gif?raw=true)
 
-Here you can check the [live version](coming soon)
+Here you can check the [live version](https://drive.google.com/file/d/1YivDWbn0NuUuJ7Uu3sHM8JbD6uZCSMkz/view?usp=sharing)
 
 ## Technologies And Concepts Used :computer:
 
