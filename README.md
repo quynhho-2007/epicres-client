@@ -15,11 +15,16 @@ I am currently working on a mobile app version with React Native :calling:.
 
 ## Demo :eyes: :technologist:
 
-HomePage ![HomePage Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/HomePage.gif?raw=true)
-HomePage Features ![HomePage Features Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/HomePageFeatures.gif?raw=true)
-DetailsPage ![DetailsPage Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/DetailsPage.gif?raw=true)
-Cart ![Cart Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/Cart.gif?raw=true)
-Add Favorites Loggined ![DetailsPage Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/AddFavoritesLoginned.gif?raw=true)
+HomePage
+![HomePage Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/HomePage.gif?raw=true)
+HomePage Features
+![HomePage Features Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/HomePageFeatures.gif?raw=true)
+DetailsPage
+![DetailsPage Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/DetailsPage.gif?raw=true)
+Cart
+![Cart Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/Cart.gif?raw=true)
+Add Favorites Loggined
+![DetailsPage Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/AddFavoritesLoginned.gif?raw=true)
 
 Here you can check the [live version](coming soon)
 
@@ -70,11 +75,11 @@ Go to [Project board](https://github.com/quynhho-2007/epicres-client)
 
 ## Wireframe
 
-Go to [wireframe](https://wireframepro.mockflow.com/view/M1ce90436bb3e7cbb12ccce89c7f4c2c81617719637664#/page/2e67437bdb86473ca611dc2f995150a9).
+Go to [wireframe](https://github.com/quynhho-2007/epicres-client/blob/master/assets/Wireframe.pdf?raw=true).
 
 ## Database model
 
-Go to [Database model](https://dbdiagram.io/d/606c5adfecb54e10c33ee98d)
+Go to [Database model](https://github.com/quynhho-2007/epicres-client/blob/master/assets/DatabaseDiagram.pdf?raw=true)
 
 ## Backend server repo
 
