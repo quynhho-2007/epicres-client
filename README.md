@@ -13,9 +13,15 @@ Features are designed, keeping in mind: :tipping_hand_woman:
 
 I am currently working on a mobile app version with React Native :calling:.
 
-Here you can watch ![HomePage Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/Homepage.gif?raw=true) :eyes:
+## Demo :eyes: :technologist:
 
-Here you can check the [live version](coming soon) :technologist:
+HomePage ![HomePage Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/HomePage.gif?raw=true)
+HomePage Features ![HomePage Features Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/HomePageFeatures.gif?raw=true)
+DetailsPage ![DetailsPage Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/DetailsPage.gif?raw=true)
+Cart ![Cart Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/Cart.gif?raw=true)
+Add Favorites Loggined ![DetailsPage Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/AddFavoritesLoginned.gif?raw=true)
+
+Here you can check the [live version](coming soon)
 
 ## Technologies And Concepts Used :computer:
 
