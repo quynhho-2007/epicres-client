@@ -74,11 +74,12 @@ Go to [Project board](https://github.com/quynhho-2007/epicres-client)
 
 ## Wireframe
 
-Go to [wireframe](https://github.com/quynhho-2007/epicres-client/blob/master/assets/Wireframe.pdf?raw=true).
+View [wireframe](https://drive.google.com/file/d/1RidGR7lAWXsDoHzwCimHOGC7auj9GVqn/view?usp=sharing).
+Download [wireframe](https://github.com/quynhho-2007/epicres-client/blob/master/assets/Wireframe.pdf?raw=true).
 
 ## Database model
-
-Go to [Database model](https://github.com/quynhho-2007/epicres-client/blob/master/assets/DatabaseDiagram.pdf?raw=true)
+View [Database model](https://drive.google.com/file/d/1xhQBl_2Cx4tdqC7JNlkU2S6-dBcf1UtM/view?usp=sharing)
+Download [Database model](https://github.com/quynhho-2007/epicres-client/blob/master/assets/DatabaseDiagram.pdf?raw=true)
 
 ## Backend server repo
 
