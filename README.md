@@ -15,15 +15,15 @@ I am currently working on a mobile app version with React Native :calling:.
 
 ## Demo :eyes: :technologist:
 
-![HomePage Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/HomePage.gif?raw=true)
+![HomePage Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/homepageepicres.gif?raw=true)
 
-![HomePage Features Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/HomePageFeatures.gif?raw=true)
+![HomePage Features Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/homepagefeaturesepicres.gif?raw=true)
 
-![DetailsPage Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/DetailsPage.gif?raw=true)
+![DetailsPage Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/detailspageepicres.gif?raw=true)
 
-![Cart Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/Cart.gif?raw=true)
+![Cart Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/cartepicres.gif?raw=true)
 
-![DetailsPage Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/AddFavoritesLoginned.gif?raw=true)
+![DetailsPage Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/favoriteslogginedepicres.gif?raw=true)
 
 Here you can check the [live version](https://drive.google.com/file/d/1YivDWbn0NuUuJ7Uu3sHM8JbD6uZCSMkz/view?usp=sharing)
 
