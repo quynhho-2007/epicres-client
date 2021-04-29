@@ -23,7 +23,7 @@ I am currently working on a mobile app version with React Native :calling:.
 
 ![Cart Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/cartepicres.gif?raw=true)
 
-![DetailsPage Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/favoriteslogginedepicres.gif?raw=true)
+![Favorites Gif](https://github.com/quynhho-2007/epicres-client/blob/master/assets/favoriteslogginedepicres.gif?raw=true)
 
 Here you can check the [live version](https://drive.google.com/file/d/1YivDWbn0NuUuJ7Uu3sHM8JbD6uZCSMkz/view?usp=sharing)
 
@@ -78,6 +78,7 @@ View [wireframe](https://drive.google.com/file/d/1RidGR7lAWXsDoHzwCimHOGC7auj9GV
 Download [wireframe](https://github.com/quynhho-2007/epicres-client/blob/master/assets/Wireframe.pdf?raw=true).
 
 ## Database model
+
 View [Database model](https://drive.google.com/file/d/1xhQBl_2Cx4tdqC7JNlkU2S6-dBcf1UtM/view?usp=sharing)
 Download [Database model](https://github.com/quynhho-2007/epicres-client/blob/master/assets/DatabaseDiagram.pdf?raw=true)
 
