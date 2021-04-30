@@ -13,6 +13,8 @@ export default function SignUp() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [address, setAddress] = useState("");
+
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const history = useHistory();
@@ -26,12 +28,13 @@ export default function SignUp() {
   function submitForm(event) {
     event.preventDefault();
 
-    dispatch(signUp(firstName, lastName, email, password));
+    dispatch(signUp(firstName, lastName, email, password, address));
 
     setEmail("");
     setPassword("");
     setFirstName("");
     setLastName("");
+    setAddress("");
   }
 
   return (
@@ -87,6 +90,16 @@ export default function SignUp() {
             onChange={(event) => setPassword(event.target.value)}
             type="password"
             placeholder="Password"
+            required
+          />
+        </Form.Group>
+        <Form.Group controlId="formBasicAddress">
+          <Form.Label>Address</Form.Label>
+          <Form.Control
+            value={address}
+            onChange={(event) => setAddress(event.target.value)}
+            type="address"
+            placeholder="Address"
             required
           />
         </Form.Group>

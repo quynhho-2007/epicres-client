@@ -5,6 +5,7 @@ const initialState = {
   firstName: null,
   lastName: null,
   email: null,
+  address: null,
   favorites: [],
 };
 

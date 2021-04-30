@@ -90,7 +90,7 @@ export const setFavorites = (favoriteData) => ({
 export const logOut = () => ({ type: LOG_OUT });
 
 //To Signup
-export const signUp = (firstName, lastName, email, password) => {
+export const signUp = (firstName, lastName, email, password, address) => {
   return async (dispatch, getState) => {
     dispatch(appLoading());
     try {
@@ -99,6 +99,7 @@ export const signUp = (firstName, lastName, email, password) => {
         lastName,
         email,
         password,
+        address,
       });
 
       dispatch(loginSuccess(response.data));
